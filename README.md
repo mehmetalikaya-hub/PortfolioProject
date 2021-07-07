@@ -1,10 +1,10 @@
-# PortfolioProject with SQL
-# Link following: https://www.youtube.com/watch?v=qfyynHBFOsM&ab_channel=AlexTheAnalyst
-#In this portfolio project I will be preparing different analysis. Projects can be divided different steps. I consider setting 4 projects respectively such as: 
-1) Analyzing a dataset with Basic SQL queries
-2) Data exploration with SQL 
-3) Data Cleaning with SQL 
-4) Correlation with Python in Jupyter notebook
+# Making a PortfolioProject with SQL and Python
+Link may could help you to understand what is going on: https://www.youtube.com/watch?v=qfyynHBFOsM&ab_channel=AlexTheAnalyst
+In this portfolio project I will be preparing different analysis. Projects can be divided different steps. I consider setting 4 projects respectively such as: 
+Project 1) Analyzing a dataset with Basic SQL queries
+Project 2) Data exploration with SQL 
+Project 3) Data Cleaning with SQL 
+Project 4) Correlation with Python in Jupyter notebook
 
 
 #ABOUT DATASETS
