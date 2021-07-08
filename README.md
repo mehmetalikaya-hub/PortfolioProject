@@ -7,6 +7,8 @@ Projects can be divided different steps. I consider setting 4 projects respectiv
 
 Project 1) Analyzing a dataset with Basic SQL queries
 
+<b>There are roughly 30 SQL queries to manipulate data by using FUNDAMENTAL SQL COMMANDS. You will find different concepts.</b>
+
 Project 2) Data exploration with SQL 
 
 Project 3) Data Cleaning with SQL 
