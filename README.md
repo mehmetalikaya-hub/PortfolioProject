@@ -3,7 +3,7 @@ Link may could help you to understand what is going on: https://www.youtube.com/
 
 In this portfolio project I will be preparing different analysis.
 
-Projects can be divided different steps. I consider setting 4 projects respectively such as:
+<b>Projects can be divided different steps. I consider setting 4 projects respectively such as:</b>
 
 Project 1) Analyzing a dataset with Basic SQL queries
 
