@@ -14,7 +14,8 @@ Project 3) Data Cleaning with SQL
 Project 4) Correlation with Python in Jupyter notebook
 
 
-#ABOUT DATASETS
+# ABOUT DATASETS
+
 For the project 1, the dataset could be reached via link https://www.udemy.com/course/alistirmalarla-sql-ogreniyorum/. 
 
 This dataset is about Car features. We will be using BASIC and MODERATE SQL level to manipulate this dataset.
