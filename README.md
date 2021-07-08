@@ -11,6 +11,8 @@ Project 1) Analyzing a dataset with Basic SQL queries
 
 Project 2) Data exploration with SQL 
 
+<b>Data exploration and making some insights about dataset, interpret it and conclude.</b>
+
 Project 3) Data Cleaning with SQL 
 
 Project 4) Correlation with Python in Jupyter notebook
