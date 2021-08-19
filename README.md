@@ -1,4 +1,4 @@
-# Making a PortfolioProject with SQL and Python
+# PortfolioProjects with SQL and Python
 <p>Link may could help you to understand which resource I inspired : https://www.youtube.com/watch?v=qfyynHBFOsM&ab_channel=AlexTheAnalyst</p>
 
 In this portfolio project I will be preparing different analysis.
