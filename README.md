@@ -7,15 +7,42 @@ In this portfolio project I will be preparing different analysis.
 
 Project 1) Analyzing a dataset with Basic SQL queries
 
+<b>SELECT
+COUNT
+HAVING
+GROUP BY 
+ORDER BY
+CASE WHEN
+WHERE
+TIME FUNCTIONS</b>
+
 <b>There are roughly 30 SQL queries to manipulate data by using FUNDAMENTAL SQL COMMANDS. You will find different concepts.</b>
 
-Project 2) Data exploration with SQL 
+Project 2) Data exploration with SQL
 
 <b>Data exploration and making some insights about dataset, interpret it and conclude.</b>
+
+<b>AGGREGATE FUNCTIONS
+CAST
+CASE WHEN STATEMENTS
+JOIN 
+DATA DEFINITION COMMNANDS
+CREATING VIEW</b>
+
 
 Project 3) Data Cleaning with SQL 
 
 Main goal : Making data more useable, much more accurate and easy to understandable.
+
+<b>UPDATE
+CREATE
+CONVERT
+JOIN
+ISNULL
+STRING FUNCTIONS
+ROW_NUMBER
+DROP AND ALTER COMMANDS</b>
+
 
 Project 4) Correlation with Python in Jupyter notebook
 
@@ -30,4 +57,7 @@ For the project 2, the dataset could be reached via link:
 https://ourworldindata.org/explorers/coronavirus-data-explorer?zoomToSelection=true&time=2020-03-01..latest&country=USA~GBR~CAN~DEU~ITA~IND&region=World&pickerMetric=location&pickerSort=asc&Interval=7-day+rolling+average&Align+outbreaks=false&Relative+to+Population=true&Metric=Confirmed+cases
 
 It is totaly about COVID and vaccinations number during the COVID. So I did some data explorations to understand what is going on COVID cases and vaccinations for each country.
+
+For the Cleaning Project the Dataset is Nashville Housing Dataset
+
 
