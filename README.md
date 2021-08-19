@@ -15,6 +15,8 @@ Project 2) Data exploration with SQL
 
 Project 3) Data Cleaning with SQL 
 
+Main goal : Making data more useable, much more accurate and easy to understandable.
+
 Project 4) Correlation with Python in Jupyter notebook
 
 
