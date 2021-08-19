@@ -5,9 +5,10 @@ In this portfolio project I will be preparing different analysis.
 
 <b>Projects can be divided different steps. I consider setting 4 projects respectively such as:</b>
 
-Project 1) Analyzing a dataset with Basic SQL queries
+<p> Project 1)GOAL is: Using the basic SQL commands and finding answers to the questions that I created, analyzing a dataset with Basic SQL queries.</p>
 
-<b>SELECT
+<b> Functions that I used
+* SELECT
 * COUNT
 * HAVING
 * GROUP BY 
@@ -18,11 +19,12 @@ Project 1) Analyzing a dataset with Basic SQL queries
 
 <b>There are roughly 30 SQL queries to manipulate data by using FUNDAMENTAL SQL COMMANDS. You will find different concepts.</b>
 
-Project 2) Data exploration with SQL
+<p>Project 2) Data exploration with SQL</p>
 
-<b>Data exploration and making some insights about dataset, interpret it and conclude.</b>
+<b>Goal is : Data exploration and making some insights about COVID dataset, interpret it and conclude.</b>
 
-<b>* AGGREGATE FUNCTIONS
+<b> Functions that I used
+* AGGREGATE FUNCTIONS
 * CAST
 * CASE WHEN STATEMENTS
 * JOIN 
@@ -32,9 +34,10 @@ Project 2) Data exploration with SQL
 
 Project 3) Data Cleaning with SQL 
 
-Main goal : Making data more useable, much more accurate and easy to understandable.
+Main goal : Making data more useable, much more accurate and easy to understand.
 
-<b>* UPDATE
+<b> Functions that I used
+* UPDATE
 * CREATE
 * CONVERT
 * JOIN
@@ -58,6 +61,7 @@ https://ourworldindata.org/explorers/coronavirus-data-explorer?zoomToSelection=t
 
 It is totaly about COVID and vaccinations number during the COVID. So I did some data explorations to understand what is going on COVID cases and vaccinations for each country.
 
-For the Cleaning Project the Dataset is Nashville Housing Dataset
+For the Cleaning Project the Dataset is Nashville Housing Dataset.
+
 
 
