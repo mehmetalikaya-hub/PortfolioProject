@@ -15,15 +15,15 @@ SELECT location, date,total_cases,new_cases,total_deaths,population
 FROM PortfolioProject..CovidDeaths
 ORDER BY 1,2;
 
--- Ulkemizin Toplam Vaka ile Toplam olum arasındaki yüzdelik iliskiye bakıs...
+-- Ulkemizin Toplam Vaka ile Toplam olum arasÃ½ndaki yÃ¼zdelik iliskiye bakÃ½s...
 --Looking the relation between the total cases and death tools as a ratio of our country.
 SELECT location, date,total_cases,total_deaths,
-(CAST(total_deaths AS numeric) / total_cases) * 100 AS ÖLÜM_ORANI
+(CAST(total_deaths AS numeric) / total_cases) * 100 AS Ã–LÃœM_ORANI
 FROM PortfolioProject..CovidDeaths
 WHERE location = 'Turkey'
 ORDER BY 2;
 
---Ulkemizin toplam vaka sayısı ile nüfus arasındaki yüzdelik ilişkiye bakış...
+--Ulkemizin toplam vaka sayÃ½sÃ½ ile nÃ¼fus arasÃ½ndaki yÃ¼zdelik iliÃ¾kiye bakÃ½Ã¾...
 --Looking the relation between the total cases and population as a ratio of our country.
 SELECT location,date,population,total_cases,
 (CAST(total_cases AS numeric) /population) * 100 AS VAKA_ORANI
@@ -31,62 +31,62 @@ FROM PortfolioProject..CovidDeaths
 WHERE location = 'Turkey'
 ORDER BY 2;
 
--- Nufusa göre enfekte oranı en fazla olan ulke hangisidir?
+-- Nufusa gÃ¶re enfekte oranÃ½ en fazla olan ulke hangisidir?
 -- Which country has the highest infected number according to its population.
-SELECT location, population,MAX(total_cases) AS EN_YÜKSEK_VAKA_SAYISI,
+SELECT location, population,MAX(total_cases) AS EN_YÃœKSEK_VAKA_SAYISI,
 (CAST(MAX(total_cases) AS decimal) / NULLIF(population,0)) *100 AS VAKA_NUFUS_ORANI
 FROM PortfolioProject..CovidDeaths
 GROUP BY location, population
 ORDER BY VAKA_NUFUS_ORANI DESC;
 
---Ülkelere göre en fazla ölüm sayıları ne alemde?
+--Ãœlkelere gÃ¶re en fazla Ã¶lÃ¼m sayÃ½larÃ½ ne alemde?
 -- What about the death tools according to countries.
-SELECT location,MAX(total_deaths) AS en_yüksek_ölüm_sayısı
+SELECT location,MAX(total_deaths) AS en_yÃ¼ksek_Ã¶lÃ¼m_sayÃ½sÃ½
 FROM PortfolioProject..CovidDeaths
 WHERE continent IS NOT NULL
 GROUP BY location
-ORDER BY en_yüksek_ölüm_sayısı DESC;
+ORDER BY en_yÃ¼ksek_Ã¶lÃ¼m_sayÃ½sÃ½ DESC;
 
---Kıtalara göre en fazla ölüm sayıları?
+--KÃ½talara gÃ¶re en fazla Ã¶lÃ¼m sayÃ½larÃ½?
 -- How about the death tools according to continents.
-SELECT continent,MAX(total_deaths) AS MAX_ÖLÜM
+SELECT continent,MAX(total_deaths) AS MAX_Ã–LÃœM
 FROM PortfolioProject..CovidDeaths
 WHERE continent IS NOT NULL
 GROUP BY continent
-ORDER BY MAX_ÖLÜM DESC;
+ORDER BY MAX_Ã–LÃœM DESC;
 
 
---Nufusa göre en yüksek ölüm oranlarına sahip olan 10 ülkeyi sıralayınız...
+--Nufusa gÃ¶re en yÃ¼ksek Ã¶lÃ¼m oranlarÃ½na sahip olan 10 Ã¼lkeyi sÃ½ralayÃ½nÃ½z...
 -- Order the 10 countries which have the highest death tool according to their populations.
-SELECT TOP 10 location,population,MAX(CAST(total_deaths AS int)) AS EN_YÜKSEK_ÖLÜM,
-MAX((CAST(total_deaths AS numeric) / NULLIF(population,0))) * 100 AS NÜFUS_ÖLÜM_ORANI
+SELECT TOP 10 location,population,MAX(CAST(total_deaths AS int)) AS EN_YÃœKSEK_Ã–LÃœM,
+MAX((CAST(total_deaths AS numeric) / NULLIF(population,0))) * 100 AS NÃœFUS_Ã–LÃœM_ORANI
 FROM PortfolioProject..CovidDeaths
 GROUP BY location,population
-ORDER BY NÜFUS_ÖLÜM_ORANI DESC;
+ORDER BY NÃœFUS_Ã–LÃœM_ORANI DESC;
 
--- TÜM DÜNYADA, BELİRLİ GÜNLERE GÖRE TOPLAM ÖLÜM SAYISININ TOPLAM VAKA SAYISINA GÖRE ORANI NEDİR?
+-- TÃœM DÃœNYADA, BELÃRLÃ GÃœNLERE GÃ–RE TOPLAM Ã–LÃœM SAYISININ TOPLAM VAKA SAYISINA GÃ–RE ORANI NEDÃR?
 -- What are the ratios if we look the relation between death numbers and new cases for each day?
-SELECT date, SUM(new_cases) AS TOPLAM_VAKA, SUM(new_deaths) TOPLAM_ÖLÜM,
+SELECT date, SUM(new_cases) AS TOPLAM_VAKA, SUM(new_deaths) TOPLAM_Ã–LÃœM,
 SUM(CAST(total_deaths AS numeric)) / NULLIF(SUM(total_cases),0) * 100
 FROM PortfolioProject..CovidDeaths
 WHERE continent IS NOT NULL
 GROUP BY date
 ORDER BY date
 
--- DÜNYADA TOPLAM VAKA İLE TOPLAM ÖLÜM SAYISI NEDİR?
+-- DÃœNYADA TOPLAM VAKA ÃLE TOPLAM Ã–LÃœM SAYISI NEDÃR?
 -- What is the total cases and total death numbers?
-SELECT SUM(new_cases) AS TOPLAM_VAKA, SUM(new_deaths) TOPLAM_ÖLÜM,
+SELECT SUM(new_cases) AS TOPLAM_VAKA, SUM(new_deaths) TOPLAM_Ã–LÃœM,
 SUM(CAST(new_deaths AS numeric)) / NULLIF(SUM(new_cases),0) * 100
 FROM PortfolioProject..CovidDeaths
 
---Aşılama sayılarını gösteren tabloya erişelim.
+--AÃ¾Ã½lama sayÃ½larÃ½nÃ½ gÃ¶steren tabloya eriÃ¾elim.
 --Access the another table which is called vaccinations.
 SELECT * FROM PortfolioProject..CovidDeaths dea
 JOIN PortfolioProject..CovidVaccinations vac
 ON dea.location = vac.location
 AND dea.date = vac.date
 
---Aşılama sayıları ile toplam nüfus arasındaki oranlara erişelim.
+--AÃ¾Ã½lama sayÃ½larÃ½ ile toplam nÃ¼fus arasÃ½ndaki oranlara eriÃ¾elim.
 --What is the relation between vaccinations numbers and total cases?
 SELECT dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations
 FROM PortfolioProject..CovidDeaths dea
@@ -95,13 +95,13 @@ ON dea.location = vac.location
 AND dea.date = vac.date
 WHERE dea.continent IS NOT NULL
 
--- Türkiye'nin günden güne yapılan aşılama sayılarını bulup, kümülatif toplamını veren sorguyu yazalım.
+-- TÃ¼rkiye'nin gÃ¼nden gÃ¼ne yapÃ½lan aÃ¾Ã½lama sayÃ½larÃ½nÃ½ bulup, kÃ¼mÃ¼latif toplamÃ½nÃ½ veren sorguyu yazalÃ½m.
 -- Find the Turkey's vaccinations numbers day by day and find cumulative ratio according to its populatios.
-WITH AŞI_TABLO (Continent, Location, Date, Population, New_Vaccinations, Cumulative_Vac_Numbers)
+WITH AÃI_TABLO (Continent, Location, Date, Population, New_Vaccinations, Cumulative_Vac_Numbers)
 AS
 (
 SELECT dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations,
-SUM(CAST(vac.new_vaccinations AS bigint)) OVER(PARTITION BY dea.location ORDER BY dea.location, dea.date) AS KÜMÜLATİF_AŞILAMA
+SUM(CAST(vac.new_vaccinations AS bigint)) OVER(PARTITION BY dea.location ORDER BY dea.location, dea.date) AS KÃœMÃœLATÃF_AÃILAMA
 FROM PortfolioProject..CovidDeaths dea
 JOIN PortfolioProject..CovidVaccinations vac
 ON dea.location = vac.location
@@ -109,33 +109,33 @@ AND dea.date = vac.date
 WHERE dea.continent IS  NOT NULL
 )
 SELECT *,
-CAST(Cumulative_Vac_Numbers AS numeric) / Population * 100 AS AŞILAMA_ORANI
-FROM AŞI_TABLO
+CAST(Cumulative_Vac_Numbers AS numeric) / Population * 100 AS AÃILAMA_ORANI
+FROM AÃI_TABLO
 WHERE Location = 'Turkey';
 
--- Tüm ülkelerin En güncel aşılanma oranları ??
+-- TÃ¼m Ã¼lkelerin En gÃ¼ncel aÃ¾Ã½lanma oranlarÃ½ ??
 --What about the most recent vaccinations numbers of any country.
-WITH AŞI_TABLO (Continent, Location, Date, Population, New_Vaccinations, Cumulative_Vac_Numbers)
+WITH AÃI_TABLO (Continent, Location, Date, Population, New_Vaccinations, Cumulative_Vac_Numbers)
 AS
 (
 SELECT dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations,
-SUM(CAST(vac.new_vaccinations AS bigint)) OVER(PARTITION BY dea.location ORDER BY dea.location, dea.date) AS KÜMÜLATİF_AŞILAMA
+SUM(CAST(vac.new_vaccinations AS bigint)) OVER(PARTITION BY dea.location ORDER BY dea.location, dea.date) AS KÃœMÃœLATÃF_AÃILAMA
 FROM PortfolioProject..CovidDeaths dea
 JOIN PortfolioProject..CovidVaccinations vac
 ON dea.location = vac.location
 AND dea.date = vac.date
 WHERE dea.continent IS  NOT NULL
 )
-SELECT Location, MAX(CAST(Cumulative_Vac_Numbers AS numeric) / NULLIF(Population,0) * 100) AS AŞILAMA_ORANI
-FROM AŞI_TABLO
+SELECT Location, MAX(CAST(Cumulative_Vac_Numbers AS numeric) / NULLIF(Population,0) * 100) AS AÃILAMA_ORANI
+FROM AÃI_TABLO
 GROUP BY Location
-ORDER BY AŞILAMA_ORANI DESC;
+ORDER BY AÃILAMA_ORANI DESC;
 
 
 --Temp Table
 --Do it by using temp tables.
-DROP TABLE IF EXISTS #AŞILAMA_ORANLARI
-CREATE TABLE #AŞILAMA_ORANLARI
+DROP TABLE IF EXISTS #AÃILAMA_ORANLARI
+CREATE TABLE #AÃILAMA_ORANLARI
 (
 Continent NVARCHAR(255),
 Location NVARCHAR(255),
@@ -145,25 +145,25 @@ New_Vaccinations numeric,
 Cumulative_Num_Of_Vacs numeric
 )
 
-INSERT INTO #AŞILAMA_ORANLARI
+INSERT INTO #AÃILAMA_ORANLARI
 SELECT dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations,
-SUM(CAST(vac.new_vaccinations AS bigint)) OVER(PARTITION BY dea.location ORDER BY dea.location, dea.date) AS KÜMÜLATİF_AŞILAMA
+SUM(CAST(vac.new_vaccinations AS bigint)) OVER(PARTITION BY dea.location ORDER BY dea.location, dea.date) AS KÃœMÃœLATÃF_AÃILAMA
 FROM PortfolioProject..CovidDeaths dea
 JOIN PortfolioProject..CovidVaccinations vac
 ON dea.location = vac.location
 AND dea.date = vac.date
 
 SELECT *,
-CAST(Cumulative_Num_Of_Vacs AS numeric) / Population * 100 AS AŞILAMA_ORANI
-FROM #AŞILAMA_ORANLARI
+CAST(Cumulative_Num_Of_Vacs AS numeric) / Population * 100 AS AÃILAMA_ORANI
+FROM #AÃILAMA_ORANLARI
 
 --Creating View to store data to visualize
 CREATE VIEW BOLGELER_OLUMLER AS
-SELECT location,MAX(total_deaths) AS en_yüksek_ölüm_sayısı
+SELECT location,MAX(total_deaths) AS en_yÃ¼ksek_Ã¶lÃ¼m_sayÃ½sÃ½
 FROM PortfolioProject..CovidDeaths
 WHERE continent IS NOT NULL
 GROUP BY location
---ORDER BY en_yüksek_ölüm_sayısı DESC
+--ORDER BY en_yÃ¼ksek_Ã¶lÃ¼m_sayÃ½sÃ½ DESC
 
 select * from BOLGELER_OLUMLER
 
