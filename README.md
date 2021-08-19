@@ -5,7 +5,7 @@ In this portfolio project I will be preparing different analysis.
 
 <b>Projects can be divided different steps. I consider setting 4 projects respectively such as:</b>
 
-<p> Project 1)GOAL is: Using the basic SQL commands and finding answers to the questions that I created, analyzing a dataset with Basic SQL queries.</p>
+<p> <b>Project 1)</b> GOAL is: Using the basic SQL commands and finding answers to the questions that I created, analyzing a dataset with Basic SQL queries.</p>
 
 <b> Functions that I used
 * SELECT
